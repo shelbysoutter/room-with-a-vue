@@ -1,16 +1,22 @@
 <template>
   <div id="app">
+    <Header />
     <SearchMovies />
+    <Movies />
   </div>
 </template>
 
 <script>
+import Header from './components/layout/Header.vue'
 import SearchMovies from './components/SearchMovies.vue'
+import Movies from './components/Movies.vue'
 
 export default {
   name: 'App',
   components: {
-    SearchMovies
+    Header,
+    SearchMovies,
+    Movies
   }
 }
 </script>
@@ -22,6 +28,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+* {
+    box-sizing: border-box;
+}
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1 fr));
+}
+img {
+    display: block;
+    box-shadow: -1px 0px 0px rgba(0,0,0,0.06);
+}
+
 </style>
