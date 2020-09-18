@@ -1,13 +1,15 @@
 <template>
-    <div class="search">
+    <div>
         <h1>Search</h1>
         <input type="text" v-model="query" @keyup="getMovies(query)">
-        <div v-for="result in results" :key="result.id"> 
-            <p>{{result.title}}</p>
-            <img v-if="result.poster_path != null" v-bind:src="'http://image.tmdb.org/t/p/w500/' + result.poster_path" width="100px">
-            <img v-if="result.poster_path == null && result.title != null" src='https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg' width="100px">
+        <div v-if="this.query != ''" class="main-movie-box">
+            <div class="individual-movie" v-for="result in results" :key="result.id"> 
+                <p>{{result.title}}</p>
+                <img v-if="result.poster_path != null" v-bind:src="'http://image.tmdb.org/t/p/w500/' + result.poster_path" width="100px">
+                <img v-if="result.poster_path == null && result.title != null" src='https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg' width="100px">
+            </div>
         </div>
-        <p v-if="this.results.length == 0">Sorry! There are no movies available matching your search.</p>
+        <p v-if="this.results.length == 0 && this.query != 0">Sorry! There are no movies available matching your search.</p>
     </div>
 </template>
 
@@ -30,8 +32,25 @@ export default {
         }   
     }
 }
+
 </script>
 
 <style scoped>
+* {
+    box-sizing: border-box;
+}
+.main-movie-box {
+    display: grid;
+    /* justify-items: stretch; */
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    padding-top: 5%;
+    column-gap: 5px;
+    row-gap: 15%;
+}
+.individual-movie {
+    display: block;
+    width: 100%;
 
+    
+}
 </style>
