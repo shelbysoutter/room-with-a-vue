@@ -1,8 +1,8 @@
 <template>
-  <div id="app">
+  <div class="main" id="app">
     <Header />
     <SearchMovies />
-    <Movies />
+    <Movies v-bind:movies="movies"/>
   </div>
 </template>
 
@@ -17,6 +17,15 @@ export default {
     Header,
     SearchMovies,
     Movies
+  },
+  data() {
+    return {
+      movies: [
+        {
+
+        }
+      ]
+    }
   }
 }
 </script>
@@ -37,7 +46,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1 fr));
 }
-img {
+.child-box {
     display: block;
     box-shadow: -1px 0px 0px rgba(0,0,0,0.06);
 }

@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="main" v-for="result in results" :key="result.id">
+    <div class="child-box" >
+        <div v-for="result in results" :key="result.id">
             <p>{{result.title}}</p>
             <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + result.poster_path" width="100px">
         </div>
@@ -9,8 +9,10 @@
 
 
 <script>
+
 export default {
-    name: "Movies"
+    name: "Movies",
+    props: ["results"]
 }
 </script>
 

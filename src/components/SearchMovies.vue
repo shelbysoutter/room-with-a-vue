@@ -1,22 +1,22 @@
 <template>
     <div class="search">
         <h1>Search</h1>
-        <input type="text" v-model="query" @keyup="getMovies()">
+        <input type="text" v-model="query" @keyup="getMovies(query)">
         <div v-for="result in results" :key="result.id">
             <p>{{result.title}}</p>
-
             <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + result.poster_path" width="100px">
         </div>
     </div>
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
+
 export default {
-    name: "search",
+    name: "SearchMovies",
     data () {
         return {
-            query: "superman",
+            query: "",
             results: " ",
             apiKey: "edbf0621b39a1db6f6ce24db4800ad5c"
         }
@@ -29,7 +29,7 @@ export default {
         // }
         
         
-        getMovies() {
+        getMovies(query) {
             // const requestOptions = {
             // method: 'GET',
             // headers: { 
@@ -40,7 +40,7 @@ export default {
             //     .then(response => response.json())
             //     .then(data => this.postId = data.id);
             // }
-            let URL = 'https://api.themoviedb.org/3/search/movie?api_key=edbf0621b39a1db6f6ce24db4800ad5c&query=superman'
+            let URL = 'https://api.themoviedb.org/3/search/movie?api_key=edbf0621b39a1db6f6ce24db4800ad5c&query=' + query
             axios.get(URL).then(response => { this.results = response.data.results })
             // this.responseAvailable = false
             // fetch(URL, {
