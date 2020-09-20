@@ -31,7 +31,7 @@ export default {
     }
     .footer-container {
         position: relative;
-        min-height: 20vh;
+        /* min-height: 20vh; */
 
     }
 </style>

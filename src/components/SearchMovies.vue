@@ -52,6 +52,7 @@ export default {
 }
 .individual-movie:hover .movie-text-location {
     opacity: 1;
+    visibility: visible;
 }
 .individual-movie:hover .image {
     opacity: 0.3;
@@ -64,15 +65,27 @@ export default {
 .movie-text-location {
     transition: .5s ease;
     opacity: 0;
-    position: absolute;   
+    position: absolute; 
+    z-index: 1;  
 }
 .movie-text {
     color: white;
+}
+.individual-movie .movie-text-location {
+    visibility: hidden;
+    width: 300px;
+    background-color: black;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
 }
 .search-area {
     min-height: 100vh;
     overflow: hidden;
     position: relative;
-    padding-bottom: 175px;
+    padding-bottom: 250px;
 }
 </style>
