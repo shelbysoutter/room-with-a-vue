@@ -1,7 +1,7 @@
 <template>
     <div class="search-area">
         <h1>Search</h1>
-        <input type="text" v-model="query" @keyup="getMovies(query)">
+        <input style="width:250px" type="text" v-model="query" @keyup="getMovies(query)">
         <div v-if="this.query != ''" class="main-movie-box">
             <div class="individual-movie" v-for="result in results" :key="result.id"> 
                 <p>{{result.title}}</p>
@@ -29,6 +29,7 @@ export default {
         }
     },
     methods: { 
+        // axios get request to TMDB API to return movie details
         getMovies(query) {
             let URL = 'https://api.themoviedb.org/3/search/movie?api_key=edbf0621b39a1db6f6ce24db4800ad5c&query=' + query
             axios.get(URL).then(response => { this.results = response.data.results })
@@ -44,7 +45,6 @@ export default {
 }
 .main-movie-box {
     display: grid;
-    /* justify-items: stretch; */
     grid-template-columns: 20% 20% 20% 20% 20%;
     padding-top: 5%;
     column-gap: 5px;
