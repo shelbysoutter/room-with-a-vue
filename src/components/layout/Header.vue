@@ -1,7 +1,7 @@
 <template>
-    <header class="header">
+    <div class="header">
         <h1>Room with a Vue</h1>
-    </header>
+    </div>
 </template>
 
 <script>
@@ -12,10 +12,11 @@ export default {
 
 <style scoped>
     .header {
-        background: #0d253f;
+        background: #424954;
         color: #fff;
-        text-align: center;
-        padding: 10px;
+
+        padding: 5px;
         width: 100%;
+        margin-bottom: 50px;
     }
 </style>
