@@ -22,7 +22,6 @@ export default {
         text-align: center;
         position: absolute;
         padding: 20px;
-        padding-left: 50px;
         width: 100%;
         left: 0;
         bottom: 0;
@@ -31,7 +30,7 @@ export default {
     }
     .footer-container {
         position: relative;
-        /* min-height: 20vh; */
+
 
     }
 </style>

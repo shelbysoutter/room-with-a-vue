@@ -17,6 +17,6 @@ export default {
 
         padding: 5px;
         width: 100%;
-        margin-bottom: 50px;
+        margin-bottom: 25px;
     }
 </style>

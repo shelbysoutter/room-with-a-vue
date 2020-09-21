@@ -83,9 +83,9 @@ export default {
     z-index: 1;
 }
 .search-area {
-    min-height: 100vh;
-    overflow: hidden;
+    min-height: 90vh;
+    overflow: auto;
     position: relative;
-    padding-bottom: 250px;
+    padding-bottom: 25px;
 }
 </style>
